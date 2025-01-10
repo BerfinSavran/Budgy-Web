@@ -1,0 +1,766 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Budgy.Api",
+      "version": "1.0"
+    },
+    "paths": {
+      "/api/Auth": {
+        "post": {
+          "tags": [
+            "Auth"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginRequestDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginRequestDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginRequestDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Category": {
+        "post": {
+          "tags": [
+            "Category"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Category"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Category"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Category/id/{id}": {
+        "get": {
+          "tags": [
+            "Category"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Category/type/{inExType}/{userid}": {
+        "get": {
+          "tags": [
+            "Category"
+          ],
+          "parameters": [
+            {
+              "name": "inExType",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "userid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Goal": {
+        "post": {
+          "tags": [
+            "Goal"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Goal"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Goal"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Goal"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Goal"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Goal"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Goal/id/{id}": {
+        "get": {
+          "tags": [
+            "Goal"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Goal/dateRange/{userid},{startDate}": {
+        "get": {
+          "tags": [
+            "Goal"
+          ],
+          "parameters": [
+            {
+              "name": "userid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "startDate",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/DateOnly"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/IncomeExpense": {
+        "post": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeExpense"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeExpense"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeExpense"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/IncomeExpense/id/{id}": {
+        "get": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/IncomeExpense/type/{inExType}/{userid}": {
+        "get": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "parameters": [
+            {
+              "name": "inExType",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "userid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/IncomeExpense/MonthlyUpdate": {
+        "post": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "parameters": [
+            {
+              "name": "month",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "year",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "inExType",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/IncomeExpense/MonthlyTotals/{userid}": {
+        "get": {
+          "tags": [
+            "IncomeExpense"
+          ],
+          "parameters": [
+            {
+              "name": "userid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/User": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "User"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/User/id/{id}": {
+        "get": {
+          "tags": [
+            "User"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/User/email/{email}": {
+        "get": {
+          "tags": [
+            "User"
+          ],
+          "parameters": [
+            {
+              "name": "email",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Category": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "userId": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            },
+            "inExType": {
+              "$ref": "#/components/schemas/EnumInExType"
+            },
+            "totalAmount": {
+              "type": "number",
+              "format": "double"
+            },
+            "lastResetMonth": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "lastResetYear": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "DateOnly": {
+          "type": "object",
+          "properties": {
+            "year": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "month": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "day": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "dayOfWeek": {
+              "$ref": "#/components/schemas/DayOfWeek"
+            },
+            "dayOfYear": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "dayNumber": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "DayOfWeek": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "EnumGender": {
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "EnumInExType": {
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "Goal": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "userId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "categoryId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "amount": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "startDate": {
+              "$ref": "#/components/schemas/DateOnly"
+            },
+            "endDate": {
+              "$ref": "#/components/schemas/DateOnly"
+            }
+          },
+          "additionalProperties": false
+        },
+        "IncomeExpense": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "userId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "categoryId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "category": {
+              "$ref": "#/components/schemas/Category"
+            },
+            "amount": {
+              "type": "number",
+              "format": "double"
+            },
+            "inExType": {
+              "$ref": "#/components/schemas/EnumInExType"
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "date": {
+              "$ref": "#/components/schemas/DateOnly"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LoginRequestDto": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "nullable": true
+            },
+            "password": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "User": {
+          "required": [
+            "email"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "fullName": {
+              "type": "string",
+              "nullable": true
+            },
+            "email": {
+              "minLength": 1,
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "type": "string",
+              "nullable": true
+            },
+            "gender": {
+              "$ref": "#/components/schemas/EnumGender"
+            },
+            "telNo": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
